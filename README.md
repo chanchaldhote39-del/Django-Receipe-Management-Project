@@ -1,0 +1,1 @@
+This project demonstrates practical implementation of Django MVC architecture, CRUD operations, user authentication, and secure database handling. It improves understanding of backend development, RESTful design principles, and real-world project structuring.
