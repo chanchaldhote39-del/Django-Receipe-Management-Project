@@ -7,7 +7,7 @@ class Receipe(models.Model):
     user = models.ForeignKey(User , on_delete=models.SET_NULL , null = True , blank=True)
     receipe_name = models.CharField(max_length=100)
     receipe_description = models.TextField()
-    receipe_image = models.ImageField(blank=True, null=True)
+    receipe_image = models.ImageField(upload_to='receipe/' , blank=True, null=True)
 
     def __str__(self):
         return self.receipe_name
