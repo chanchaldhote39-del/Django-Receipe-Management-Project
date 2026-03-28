@@ -19,11 +19,14 @@ from django.urls import path
 from vege.views import *
 from django.conf.urls.static import static
 from django.conf import settings
+from django.views.generic.base import RedirectView   # <-- add this
 
 urlpatterns = [
+    path('', RedirectView.as_view(url='/receipes/')),  # <-- root redirect
+
     path('admin/', admin.site.urls),
     
-    path('',receipes ,name='receipes'),
+    path('receipes/',receipes ,name='receipes'),
     path('delete_receipe/<id>/',delete_receipe,name='delete_receipe'),
     path('update_receipe/<id>/',update_receipe,name='update_receipe'),
     path('login/',login_page,name='login'),

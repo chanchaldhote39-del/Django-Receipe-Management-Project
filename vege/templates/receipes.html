@@ -66,7 +66,13 @@
               <td>{{ forloop.counter }}</td>
               <td>{{ receipe.receipe_name }}</td>
               <td>{{ receipe.receipe_description }}</td>
-              <td><img src="{{ receipe.receipe_image.url }}" class="recipe-img"></td>
+<td>
+  {% if receipe.receipe_image %}
+    <img src="{{ receipe.receipe_image.url }}" class="recipe-img">
+  {% else %}
+    <img src="https://via.placeholder.com/100" class="recipe-img">
+  {% endif %}
+</td>
               <td><a href="/delete_receipe/{{ receipe.id }}/" class="btn btn-danger">Delete</a></td>
               <td><a href="/update_receipe/{{ receipe.id }}/" class="btn btn-success">Update</a></td>
 
